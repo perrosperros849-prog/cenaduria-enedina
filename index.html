@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cenaduría Enedina | Santa Ana Pacueco</title>
+
+    <meta name="description" content="Cenaduría Enedina en Santa Ana Pacueco, Guanajuato. Enchiladas, tacos, pollo, cecina, papas y más.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #080808;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.96);
+            border-bottom: 1px solid #c6a33a;
+        }
+
+        nav {
+            max-width: 1150px;
+            margin: auto;
+            padding: 17px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #d4af37;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #eee;
+            text-decoration: none;
+            margin-left: 22px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            padding: 130px 20px 80px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.75),
+                    rgba(0,0,0,.94)
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .kicker {
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-size: clamp(52px, 9vw, 96px);
+            line-height: 1;
+            color: #d4af37;
+            margin: 18px 0;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #ddd;
+            font-size: 20px;
+        }
+
+        .buttons {
+            margin-top: 32px;
+
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+
+            border: 1px solid #d4af37;
+
+            color: #d4af37;
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #d4af37;
+            color: #000;
+        }
+
+        .btn-gold {
+            background: #d4af37;
+            color: #000;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 90px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+        }
+
+        .section-title h2 {
+            font-size: 45px;
+            margin: 8px 0;
+        }
+
+        .line {
+            width: 70px;
+            height: 2px;
+            background: #d4af37;
+            margin: 15px auto;
+        }
+
+        /* MENU */
+
+        #menu {
+            background: #111;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .menu-card {
+            background: #181818;
+            border: 1px solid #3d321c;
+            overflow: hidden;
+
+            transition: .3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-placeholder {
+            height: 220px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #171717,
+                    #29220f
+                );
+
+            color: #d4af37;
+        }
+
+        .menu-info {
+            padding: 25px;
+        }
+
+        .menu-info h3 {
+            color: #d4af37;
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .menu-info p {
+            color: #c7c7c7;
+        }
+
+        .price {
+            color: #d4af37;
+            font-weight: bold;
+            margin-top: 13px;
+        }
+
+        .note {
+            text-align: center;
+            color: #888;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about h2 {
+            color: #d4af37;
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
+
+        .about p {
+            color: #ccc;
+            font-size: 18px;
+        }
+
+        .quote {
+            border-left: 3px solid #d4af37;
+            padding-left: 25px;
+
+            color: #eee;
+            font-size: 25px;
+        }
+
+        /* GALERIA */
+
+        #galeria {
+            background: #111;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 280px;
+
+            border: 1px solid #3d321c;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #171717,
+                    #211b0d
+                );
+
+            color: #d4af37;
+            padding: 20px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* LOCATION */
+
+        .location {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .info-box {
+            background: #181818;
+            border: 1px solid #3d321c;
+            padding: 30px;
+        }
+
+        .info-box h3 {
+            color: #d4af37;
+            font-size: 26px;
+            margin-bottom: 14px;
+        }
+
+        .info-box p {
+            color: #ccc;
+            margin: 8px 0;
+        }
+
+        .map {
+            width: 100%;
+            height: 360px;
+
+            border: 1px solid #3d321c;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .contact h2 {
+            color: #d4af37;
+            font-size: 45px;
+        }
+
+        .contact p {
+            color: #ccc;
+            margin: 20px 0 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #050505;
+            border-top: 1px solid #3d321c;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            color: #888;
+        }
+
+        footer strong {
+            color: #d4af37;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 800px) {
+
+            nav a {
+                display: none;
+            }
+
+            .menu-grid,
+            .gallery,
+            .about,
+            .location {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 58px;
+            }
+
+            .section-title h2,
+            .contact h2 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            ENEDINA
+        </div>
+
+        <div>
+
+            <a href="#inicio">Inicio</a>
+
+            <a href="#menu">Menú</a>
+
+            <a href="#galeria">Fotos</a>
+
+            <a href="#ubicacion">Ubicación</a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     INICIO
+========================= -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <div class="kicker">
+            Tradición · Sabor · Cena
+        </div>
+
+        <h1>
+            Cenaduría Enedina
+        </h1>
+
+        <p>
+            Disfruta una cena tradicional mexicana
+            en Santa Ana Pacueco.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="#menu"
+                class="btn btn-gold">
+                Ver platillos
+            </a>
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Cenaduria+Enedina+Salamanca+128+Santa+Ana+Pacueco+Guanajuato"
+                target="_blank"
+                class="btn">
+                Cómo llegar
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section id="menu">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                Algunos de nuestros platillos
+            </span>
+
+            <h2>
+                Menú
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+
+            <!-- ENCHILADAS -->
+
+            <div class="menu-card">
+
+                <div class="photo-placeholder">
+                    FOTO DE ENCHILADAS
+                </div>
+
+                <div class="menu-info">
+
+                    <h3>
+                        Enchiladas de frijol
+                    </h3>
+
+                    <p>
+                        Tradicionales enchiladas de frijol.
+                    </p>
+
+                    <div class="price">
+                        Precio: próximamente
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TACOS -->
+
+            <div class="menu-card">
+
+                <div class="photo-placeholder">
+                    FOTO DE TACOS DORADOS
+                </div>
+
+                <div class="menu-info">
+
+                    <h3>
+                        Tacos dorados de papa
+                    </h3>
+
+                    <p>
+                        Tacos dorados de papa preparados
+                        al estilo tradicional.
+                    </p>
+
+                    <div class="price">
+                        Precio: próximamente
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CECINA -->
+
+            <div class="menu-card">
+
+                <div class="photo-placeholder">
+                    FOTO DE CECINA
+                </div>
+
+                <div class="menu-info">
+
+                    <h3>
+                        Cecina
+                    </h3>
+
+                    <p>
+                        Cecina preparada para disfrutar
+                        durante la cena.
+                    </p>
+
+                    <div class="price">
+                        Precio: próximamente
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- POLLO -->
+
+            <div class="menu-card">
+
+                <div class="photo-placeholder">
+                    FOTO DE POLLO
+                </div>
+
+                <div class="menu-info">
+
+                    <h3>
+                        Pollo
+                    </h3>
+
+                    <p>
+                        Pollo acompañado con papas y
+                        salsa de jitomate.
+                    </p>
+
+                    <div class="price">
+                        Precio: próximamente
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAPAS -->
+
+            <div class="menu-card">
+
+                <div class="photo-placeholder">
+                    FOTO DE PAPAS
+                </div>
+
+                <div class="menu-info">
+
+                    <h3>
+                        Papas fritas
+                    </h3>
+
+                    <p>
+                        Papas fritas para acompañar
+                        tus platillos.
+                    </p>
+
+                    <div class="price">
+                        Precio: próximamente
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PATITAS -->
+
+            <div class="menu-card">
+
+                <div class="photo-placeholder">
+                    FOTO DE PATITAS Y CUERITOS
+                </div>
+
+                <div class="menu-info">
+
+                    <h3>
+                        Patitas y cueritos
+                    </h3>
+
+                    <p>
+                        Parte de los antojitos tradicionales
+                        mencionados en las fichas públicas.
+                    </p>
+
+                    <div class="price">
+                        Precio: próximamente
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p class="note">
+            Los precios deben actualizarse con la carta
+            actual del establecimiento.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NOSOTROS
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="about">
+
+            <div>
+
+                <h2>
+                    Tradición y sabor
+                </h2>
+
+                <p>
+                    Cenaduría Enedina es un establecimiento
+                    de comida mexicana ubicado en Santa Ana
+                    Pacueco, Guanajuato.
+                </p>
+
+                <br>
+
+                <p>
+                    Información pública del establecimiento
+                    menciona platillos tradicionales como
+                    enchiladas de frijol, tacos dorados de
+                    papa, cecina, pollo y papas fritas.
+                </p>
+
+            </div>
+
+
+            <div class="quote">
+
+                Una buena cena se disfruta
+                mejor con comida preparada
+                al momento.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALERIA
+========================= -->
+
+<section id="galeria">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                Nuestra comida
+            </span>
+
+            <h2>
+                Galería
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                FOTO DEL LOCAL
+            </div>
+
+            <div class="gallery-item">
+                FOTO DE LA COMIDA
+            </div>
+
+            <div class="gallery-item">
+                FOTO DEL INTERIOR
+            </div>
+
+            <div class="gallery-item">
+                FOTO DE ENCHILADAS
+            </div>
+
+            <div class="gallery-item">
+                FOTO DE CECINA
+            </div>
+
+            <div class="gallery-item">
+                FOTO DE OTRO PLATILLO
+            </div>
+
+        </div>
+
+
+        <p class="note">
+            Aquí puedes colocar fotografías propias
+            o fotografías autorizadas por el establecimiento.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     UBICACION
+========================= -->
+
+<section id="ubicacion">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                Visítanos
+            </span>
+
+            <h2>
+                Ubicación
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="location">
+
+
+            <div class="info-box">
+
+                <h3>
+                    📍 Dirección
+                </h3>
+
+                <p>
+                    Salamanca 128
+                </p>
+
+                <p>
+                    Santa Ana Pacueco,
+                    Guanajuato 36910, México
+                </p>
+
+
+                <br>
+
+
+                <h3>
+                    🕐 Horario
+                </h3>
+
+                <p>
+                    Martes a sábado
+                </p>
+
+                <p>
+                    7:00 PM – 12:00 AM
+                </p>
+
+
+                <br>
+
+
+                <h3>
+                    📞 Teléfono
+                </h3>
+
+                <p>
+                    352 126 6359
+                </p>
+
+
+                <br>
+
+
+                <a
+                    href="tel:3521266359"
+                    class="btn btn-gold">
+                    Llamar
+                </a>
+
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Cenaduria+Enedina+Salamanca+128+Santa+Ana+Pacueco+Guanajuato"
+                    target="_blank"
+                    class="btn">
+                    Abrir Maps
+                </a>
+
+            </div>
+
+
+            <div class="map">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Cenaduria%20Enedina%2C%20Salamanca%20128%2C%20Santa%20Ana%20Pacueco%2C%20Guanajuato&output=embed"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section>
+
+    <div class="contact">
+
+        <h2>
+            Te esperamos
+        </h2>
+
+        <p>
+            Ven a disfrutar una cena tradicional
+            en Cenaduría Enedina.
+        </p>
+
+        <a
+            href="https://www.google.com/maps/search/?api=1&query=Cenaduria+Enedina+Salamanca+128+Santa+Ana+Pacueco+Guanajuato"
+            target="_blank"
+            class="btn btn-gold">
+            📍 Cómo llegar
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026
+        <strong>
+            Cenaduría Enedina
+        </strong>
+    </p>
+
+    <p style="margin-top:8px;font-size:13px;">
+        Santa Ana Pacueco, Guanajuato
+    </p>
+
+</footer>
+
+</body>
+</html>
